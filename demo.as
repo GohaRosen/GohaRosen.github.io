@@ -1,19 +1,31 @@
 ﻿import flash.events.KeyboardEvent;
 
-stage.addEventListener(keyboardEvent.KEY_DOWN, yetiWalking);
+
+
+stage.addEventListener(KeyboardEvent.KEY_DOWN, yetiWalking);
+stage.addEventListener(KeyboardEvent.KEY_UP, yetiStops);
+
+var movingSpeed:uint=5;
 
 function yetiWalking(event:KeyboardEvent):void
 {
-	if (event.keyCode == keyboard.RIGHT)
+	if (event.keyCode == Keyboard.RIGHT)
+	{
+		gotoAndPlay();
+		yeti.x += movingSpeed;
+	}
+	if (event.keyCode==Keyboard.LEFT)
+	{
+		gotoAndPlay();
+		yeti.x -= movingSpeed;
+	}
+	if (event.keyCode==Keyboard.UP)
 	{
 		gotoAndPlay();
 	}
-	if (event.keyCode==keyboard.LEFT)
-	{
-		gotoAndPlay();
-	}
-	if (event.keyCode==keyboard.UP)
-	{
-		gotoAndPlay();
-	}
+}
+
+function yetiStops(event:KeyboardEvent):void
+{
+	movingSpeed=0;
 }
