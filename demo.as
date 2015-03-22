@@ -1,7 +1,6 @@
 ﻿import flash.events.KeyboardEvent;
 
 
-
 stage.addEventListener(KeyboardEvent.KEY_DOWN, yetiWalking);
 stage.addEventListener(KeyboardEvent.KEY_UP, yetiStops);
 
@@ -11,7 +10,7 @@ function yetiWalking(event:KeyboardEvent):void
 {
 	if (event.keyCode == Keyboard.RIGHT)
 	{
-		gotoAndPlay();
+		gotoAndPlay(yeti,1);
 		yeti.x += movingSpeed;
 	}
 	if (event.keyCode==Keyboard.LEFT)
