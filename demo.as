@@ -1,8 +1,10 @@
 ﻿import flash.events.KeyboardEvent;
+import flash.events.Event;
 
 
 stage.addEventListener(KeyboardEvent.KEY_DOWN, yetiWalking);
 stage.addEventListener(KeyboardEvent.KEY_UP, yetiStops);
+stage.addEventListener(Event.ENTER_FRAME, detectCollision);
 
 var movingSpeed:uint=5;
 
@@ -33,4 +35,11 @@ function yetiStops(event:KeyboardEvent):void
 {
 	yeti.stop();
 	
+}
+function detectCollision(event:Event):void
+{
+	if(yeti.hitTestObject(snow)==true)
+	{
+		trace("yeti hit the snow");
+	}
 }
