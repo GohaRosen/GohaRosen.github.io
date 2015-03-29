@@ -38,6 +38,7 @@ function yetiStops(event:KeyboardEvent):void
 }
 function detectCollision(event:Event):void
 {
+<<<<<<< HEAD
 	if(yeti.hitTestObject(snow1)==true)
 	{
 		trace("yeti hit the snow");
@@ -47,6 +48,9 @@ function detectCollision(event:Event):void
 		trace("yeti hit the snow");
 	}
 	if(yeti.hitTestObject(snow3)==true)
+=======
+	if(yeti.hitTestObject(snow)==true)
+>>>>>>> origin/master
 	{
 		trace("yeti hit the snow");
 	}
