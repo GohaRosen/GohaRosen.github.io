@@ -15,43 +15,68 @@ function yetiWalking(event:KeyboardEvent):void
 		yeti.scaleX = 1;
 		yeti.x += movingSpeed;
 		yeti.play();
-		//start moving the background
 	}
+	
+	if (event.keyCode == Keyboard.RIGHT && yeti.x >= (768-yeti.width))
+	{
+		//start moving the background
+		//background1.x+=-5; moves all layers at the same speed
+		background1.ground.x-=4; 
+		background1.clouds.x-=2; 
+		background1.mountains.x-=2;
+		background1.middle.x-=5;
+		background1.mushroomsFront.x-=8;
+		background1.snow1.x-=8;
+		background1.snow2.x-=8;
+		background1.snow3.x-=8;
+		
+	}
+	
 	if (event.keyCode==Keyboard.LEFT && yeti.x >= (256+yeti.width))
 	{
 		yeti.scaleX = -1;
 		yeti.x -= movingSpeed;
 		yeti.play();
 	}
+	
+	if (event.keyCode==Keyboard.LEFT && yeti.x <= (256+yeti.width))
+	{
+		background1.ground.x+=4; 
+		background1.clouds.x+=2; 
+		background1.mountains.x+=2;
+		background1.middle.x+=5;
+		background1.mushroomsFront.x+=8;
+		background1.snow1.x+=8;
+		background1.snow2.x+=8;
+		background1.snow3.x+=8;
+	}
+	
 	if (event.keyCode==Keyboard.UP)
 	{
-		trace("yeti is jumping now");
-		/*yeti.gotoAndPlay(37);
-		yeti.stop();*/
+		yeti.y+15;
+		yeti.gotoAndPlay(37);
 	}
 }
 
 function yetiStops(event:KeyboardEvent):void
 {
+	yeti.y-15;
 	yeti.stop();
 	
 }
 function detectCollision(event:Event):void
 {
-<<<<<<< HEAD
-	if(yeti.hitTestObject(snow1)==true)
+	if(yeti.hitTestObject(background1.snow1)==true)
 	{
-		trace("yeti hit the snow");
+		
+		background1.snow1.alpha=0;
 	}
-	if(yeti.hitTestObject(snow2)==true)
+	if(yeti.hitTestObject(background1.snow2)==true)
 	{
-		trace("yeti hit the snow");
+		background1.snow2.alpha=0;
 	}
-	if(yeti.hitTestObject(snow3)==true)
-=======
-	if(yeti.hitTestObject(snow)==true)
->>>>>>> origin/master
+	if(yeti.hitTestObject(background1.snow3)==true)
 	{
-		trace("yeti hit the snow");
+		background1.snow3.alpha=0;
 	}
 }
