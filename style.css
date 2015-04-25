@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+embed{
+	width:auto;
+	height:auto;
+	alignment-adjust:auto;
+}
+body{
+	padding:200px;
+}
