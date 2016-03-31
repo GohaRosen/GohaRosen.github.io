@@ -114,7 +114,13 @@ img.background {
 	clear:both;
 	line-height:1px;
 }
-
+#form{
+	width:930px;
+	height:980px;
+}
+#googleMap {
+        overflow: hidden;
+}
 
 @media screen and (min-height:50px) and (max-height:520px){
 }
@@ -128,6 +134,7 @@ img.background {
 
 @media screen and (min-width:50px) and (max-width:500px){
 	body {
+		width:80%;
 		padding:5px 0px 0px 5px;
 	}
 	.gallery{
@@ -144,8 +151,9 @@ img.background {
 	#date{
 	font-size:12px;
 	}
-
-		
+	#form{
+		width:80%;
+	}
 }
 
 @media screen and (min-width:501px) and (max-width:960px){
@@ -157,6 +165,10 @@ img.background {
 	
 	#date{
 	font-size:20px;
+	}
+	
+	#form{
+		width:80%;
 	}
 }
 
