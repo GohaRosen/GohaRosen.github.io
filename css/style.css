@@ -123,6 +123,9 @@ img.background {
 }
 
 @media screen and (min-height:50px) and (max-height:520px){
+	#landing{
+		height:100%
+	}
 }
 
 @media screen and (min-height:521px) and (max-height:700px){
